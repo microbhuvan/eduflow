@@ -1,0 +1,24 @@
+# Build output
+**/target/
+**/dist/
+**/build/
+
+# Dependencies
+**/node_modules/
+
+# Secrets and local config
+.env
+.env.*
+!.env.example
+**/application-local.properties
+
+# Logs and uploads
+*.log
+**/eduflow-uploads/
+
+# IDE and OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db

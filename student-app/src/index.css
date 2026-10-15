@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-paper text-ink antialiased;
+}
+
+@layer components {
+  .field {
+    @apply w-full border border-line bg-white px-3 py-2.5 text-sm text-ink outline-none focus:border-pine;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2.5 text-sm font-medium transition disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply btn bg-pine text-paper hover:bg-pineDeep;
+  }
+  .btn-ghost {
+    @apply btn border border-ink/20 bg-transparent hover:border-ink;
+  }
+  .card {
+    @apply border border-line bg-white;
+  }
+}

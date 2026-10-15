@@ -1,0 +1,30 @@
+package com.eduflow.controller;
+
+import com.eduflow.dto.AdminDtos.AuthResponse;
+import com.eduflow.dto.AdminDtos.LoginRequest;
+import com.eduflow.dto.AdminDtos.ProfileView;
+import com.eduflow.service.AuthService;
+import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class AuthController {
+    private final AuthService authService;
+
+    public AuthController(AuthService authService) {
+        this.authService = authService;
+    }
+
+    @PostMapping("/auth/login")
+    public AuthResponse login(@Valid @RequestBody LoginRequest request) {
+        return authService.login(request);
+    }
+
+    @GetMapping("/me")
+    public ProfileView me() {
+        return authService.profile();
+    }
+}
